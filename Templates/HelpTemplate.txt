@@ -1,0 +1,63 @@
+﻿<a href="text://<font color=#{{ color.lightblue }}><font color=#{{ color.lightgreen }}>::Create Command::</font>
+
+<font color=#{{ color.orange }}>Syntax:</font>
+	- create 'ql' 'slot' 'cluster1' 'cluster2' 'cluster3'
+	- create 'ability' 'treatment' 'slot' 'cluster1' 'cluster2' 'cluster3'
+	- create 'ability' 'treatment' 'slot' 'cluster1' 'cluster2' 'cluster3*'
+
+<font color=#{{ color.orange }}>Examples:</font>
+	- create 159 head cl dimach sense
+	- create 125 rarm strength
+	- create 100 400 leg stamina agility
+	- create 100 400 leg stamina* agility
+
+<font color=#{{ color.darkblue}}>The create command allows for quick implant creation.
+Syntax #1 - all information provided by the user.
+Syntax #2 - quality determined on the stats provided. (ql 48 in this case)
+Syntax #3 - lowest possible quality for * stat. (ql 45 in this case)
+Clusters and implants have many aliases, read about the alias command for more info.</font>
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+
+<font color=#{{ color.lightgreen }}>::Aosetups Command::</font>
+
+<font color=#{{ color.orange }}>Syntax:</font>
+	- aosetups 'link'
+
+<font color=#{{ color.darkblue}}>Creates the whole Aosetups implant page preset.
+Will skip any clusters / implants that the bot can't craft.</font>
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+
+<font color=#{{ color.lightgreen }}>::Designer Command::</font>
+
+<font color=#{{ color.orange }}>Syntax:</font>
+	- designer show
+	- designer create 'implantslot'
+	- designer modify 'index' 'ql'
+	- designer modify 'index' 'cluster'
+
+<font color=#{{ color.darkblue}}>The implant designer is made for making implant presets via gui interface.
+Only the first command needs to be executed, the others will be automated through the UI.</font>
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+
+<font color=#{{ color.lightgreen }}>::Ladder Command::</font>
+
+<font color=#{{ color.orange }}>Syntax:</font>
+	- ladder agility 'stat' stamina 'stat' treatment 'stat'
+
+<font color=#{{ color.darkblue}}>Automatically creates all laddering implants for the given stats.
+Currently only works with the given syntax. I might expand this command in the future.</font>
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+
+<font color=#{{ color.lightgreen }}>::Status Command:: </font>
+
+<font color=#{{ color.orange }}>Syntax:</font>
+	- status
+
+<font color=#{{ color.darkblue}}>The status command will show you your current order status which contains information such as: expirety time, credit requirement, order process track.</font>
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+">Help</a></font></font>

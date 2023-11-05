@@ -1,0 +1,1628 @@
+{
+  "AdvancedICCShinyClusters": [
+    {
+      "Stat": 277,
+      "LowId": 166125,
+      "HighId": 166126
+    },
+    {
+      "Stat": 276,
+      "LowId": 166113,
+      "HighId": 166114
+    },
+    {
+      "Stat": 281,
+      "LowId": 166173,
+      "HighId": 166174
+    },
+    {
+      "Stat": 280,
+      "LowId": 166161,
+      "HighId": 166162
+    },
+    {
+      "Stat": 316,
+      "LowId": 166197,
+      "HighId": 166198
+    },
+    {
+      "Stat": 279,
+      "LowId": 166149,
+      "HighId": 166150
+    },
+    {
+      "Stat": 317,
+      "LowId": 166209,
+      "HighId": 166210
+    },
+    {
+      "Stat": 278,
+      "LowId": 166137,
+      "HighId": 166138
+    },
+    {
+      "Stat": 319,
+      "LowId": 166233,
+      "HighId": 166234
+    },
+    {
+      "Stat": 282,
+      "LowId": 166185,
+      "HighId": 166186
+    },
+    {
+      "Stat": 102,
+      "LowId": 101337,
+      "HighId": 101338
+    },
+    {
+      "Stat": 103,
+      "LowId": 101343,
+      "HighId": 101344
+    },
+    {
+      "Stat": 107,
+      "LowId": 101367,
+      "HighId": 101368
+    },
+    {
+      "Stat": 105,
+      "LowId": 101355,
+      "HighId": 101356
+    },
+    {
+      "Stat": 137,
+      "LowId": 101583,
+      "HighId": 101584
+    },
+    {
+      "Stat": 17,
+      "LowId": 101781,
+      "HighId": 101782
+    },
+    {
+      "Stat": 151,
+      "LowId": 101661,
+      "HighId": 101662
+    },
+    {
+      "Stat": 116,
+      "LowId": 101475,
+      "HighId": 101476
+    },
+    {
+      "Stat": 128,
+      "LowId": 101547,
+      "HighId": 101548
+    },
+    {
+      "Stat": 152,
+      "LowId": 101667,
+      "HighId": 101668
+    },
+    {
+      "Stat": 111,
+      "LowId": 101445,
+      "HighId": 101446
+    },
+    {
+      "Stat": 121,
+      "LowId": 101505,
+      "HighId": 101506
+    },
+    {
+      "Stat": 142,
+      "LowId": 101613,
+      "HighId": 101614
+    },
+    {
+      "Stat": 165,
+      "LowId": 101739,
+      "HighId": 101740
+    },
+    {
+      "Stat": 148,
+      "LowId": 101757,
+      "HighId": 101758
+    },
+    {
+      "Stat": 93,
+      "LowId": 101331,
+      "HighId": 101332
+    },
+    {
+      "Stat": 163,
+      "LowId": 101727,
+      "HighId": 101728
+    },
+    {
+      "Stat": 95,
+      "LowId": 101380,
+      "HighId": 101381
+    },
+    {
+      "Stat": 161,
+      "LowId": 101715,
+      "HighId": 101716
+    },
+    {
+      "Stat": 164,
+      "LowId": 101733,
+      "HighId": 101734
+    },
+    {
+      "Stat": 144,
+      "LowId": 101625,
+      "HighId": 101626
+    },
+    {
+      "Stat": 96,
+      "LowId": 101763,
+      "HighId": 101764
+    },
+    {
+      "Stat": 154,
+      "LowId": 101679,
+      "HighId": 101680
+    },
+    {
+      "Stat": 153,
+      "LowId": 101673,
+      "HighId": 101674
+    },
+    {
+      "Stat": 126,
+      "LowId": 101535,
+      "HighId": 101536
+    },
+    {
+      "Stat": 92,
+      "LowId": 101325,
+      "HighId": 101326
+    },
+    {
+      "Stat": 155,
+      "LowId": 101685,
+      "HighId": 101686
+    },
+    {
+      "Stat": 147,
+      "LowId": 101643,
+      "HighId": 101644
+    },
+    {
+      "Stat": 97,
+      "LowId": 101392,
+      "HighId": 101393
+    },
+    {
+      "Stat": 123,
+      "LowId": 101517,
+      "HighId": 101518
+    },
+    {
+      "Stat": 150,
+      "LowId": 101655,
+      "HighId": 101656
+    },
+    {
+      "Stat": 167,
+      "LowId": 101751,
+      "HighId": 101752
+    },
+    {
+      "Stat": 109,
+      "LowId": 101433,
+      "HighId": 101434
+    },
+    {
+      "Stat": 343,
+      "LowId": 166245,
+      "HighId": 166246
+    },
+    {
+      "Stat": 110,
+      "LowId": 101439,
+      "HighId": 101440
+    },
+    {
+      "Stat": 90,
+      "LowId": 101313,
+      "HighId": 101314
+    },
+    {
+      "Stat": 19,
+      "LowId": 101793,
+      "HighId": 101794
+    },
+    {
+      "Stat": 114,
+      "LowId": 101463,
+      "HighId": 101464
+    },
+    {
+      "Stat": 100,
+      "LowId": 101398,
+      "HighId": 101399
+    },
+    {
+      "Stat": 127,
+      "LowId": 101541,
+      "HighId": 101542
+    },
+    {
+      "Stat": 130,
+      "LowId": 101412,
+      "HighId": 101413
+    },
+    {
+      "Stat": 1,
+      "LowId": 101811,
+      "HighId": 101812
+    },
+    {
+      "Stat": 181,
+      "LowId": 166005,
+      "HighId": 166006
+    },
+    {
+      "Stat": 221,
+      "LowId": 101817,
+      "HighId": 101818
+    },
+    {
+      "Stat": 125,
+      "LowId": 101529,
+      "HighId": 101530
+    },
+    {
+      "Stat": 104,
+      "LowId": 101349,
+      "HighId": 101350
+    },
+    {
+      "Stat": 118,
+      "LowId": 101487,
+      "HighId": 101488
+    },
+    {
+      "Stat": 91,
+      "LowId": 101319,
+      "HighId": 101320
+    },
+    {
+      "Stat": 101,
+      "LowId": 101404,
+      "HighId": 101405
+    },
+    {
+      "Stat": 134,
+      "LowId": 101565,
+      "HighId": 101566
+    },
+    {
+      "Stat": 383,
+      "LowId": 166305,
+      "HighId": 166306
+    },
+    {
+      "Stat": 318,
+      "LowId": 166221,
+      "HighId": 166222
+    },
+    {
+      "Stat": 132,
+      "LowId": 101424,
+      "HighId": 101554
+    },
+    {
+      "Stat": 160,
+      "LowId": 101709,
+      "HighId": 101710
+    },
+    {
+      "Stat": 168,
+      "LowId": 101386,
+      "HighId": 101387
+    },
+    {
+      "Stat": 149,
+      "LowId": 101649,
+      "HighId": 101650
+    },
+    {
+      "Stat": 145,
+      "LowId": 101631,
+      "HighId": 101632
+    },
+    {
+      "Stat": 136,
+      "LowId": 101577,
+      "HighId": 101578
+    },
+    {
+      "Stat": 159,
+      "LowId": 101703,
+      "HighId": 101704
+    },
+    {
+      "Stat": 120,
+      "LowId": 101499,
+      "HighId": 101500
+    },
+    {
+      "Stat": 106,
+      "LowId": 101361,
+      "HighId": 101362
+    },
+    {
+      "Stat": 112,
+      "LowId": 101451,
+      "HighId": 101452
+    },
+    {
+      "Stat": 21,
+      "LowId": 101805,
+      "HighId": 101806
+    },
+    {
+      "Stat": 129,
+      "LowId": 101553,
+      "HighId": 101407
+    },
+    {
+      "Stat": 162,
+      "LowId": 101721,
+      "HighId": 101722
+    },
+    {
+      "Stat": 157,
+      "LowId": 101691,
+      "HighId": 101692
+    },
+    {
+      "Stat": 94,
+      "LowId": 101374,
+      "HighId": 101375
+    },
+    {
+      "Stat": 381,
+      "LowId": 166281,
+      "HighId": 166282
+    },
+    {
+      "Stat": 380,
+      "LowId": 166269,
+      "HighId": 166270
+    },
+    {
+      "Stat": 133,
+      "LowId": 101559,
+      "HighId": 101560
+    },
+    {
+      "Stat": 119,
+      "LowId": 101493,
+      "HighId": 101494
+    },
+    {
+      "Stat": 113,
+      "LowId": 101457,
+      "HighId": 101458
+    },
+    {
+      "Stat": 143,
+      "LowId": 101619,
+      "HighId": 101620
+    },
+    {
+      "Stat": 156,
+      "LowId": 130007,
+      "HighId": 130008
+    },
+    {
+      "Stat": 20,
+      "LowId": 101799,
+      "HighId": 101800
+    },
+    {
+      "Stat": 122,
+      "LowId": 101511,
+      "HighId": 101512
+    },
+    {
+      "Stat": 108,
+      "LowId": 101427,
+      "HighId": 101428
+    },
+    {
+      "Stat": 229,
+      "LowId": 166053,
+      "HighId": 166054
+    },
+    {
+      "Stat": 231,
+      "LowId": 166077,
+      "HighId": 166078
+    },
+    {
+      "Stat": 228,
+      "LowId": 166041,
+      "HighId": 166042
+    },
+    {
+      "Stat": 233,
+      "LowId": 166089,
+      "HighId": 166090
+    },
+    {
+      "Stat": 227,
+      "LowId": 166029,
+      "HighId": 166030
+    },
+    {
+      "Stat": 234,
+      "LowId": 166101,
+      "HighId": 166102
+    },
+    {
+      "Stat": 226,
+      "LowId": 166017,
+      "HighId": 166018
+    },
+    {
+      "Stat": 230,
+      "LowId": 166065,
+      "HighId": 166066
+    },
+    {
+      "Stat": 115,
+      "LowId": 101469,
+      "HighId": 101470
+    },
+    {
+      "Stat": 382,
+      "LowId": 166293,
+      "HighId": 166294
+    },
+    {
+      "Stat": 146,
+      "LowId": 101637,
+      "HighId": 101638
+    },
+    {
+      "Stat": 18,
+      "LowId": 101787,
+      "HighId": 101788
+    },
+    {
+      "Stat": 16,
+      "LowId": 101775,
+      "HighId": 101776
+    },
+    {
+      "Stat": 131,
+      "LowId": 101418,
+      "HighId": 101419
+    },
+    {
+      "Stat": 135,
+      "LowId": 101571,
+      "HighId": 101572
+    },
+    {
+      "Stat": 124,
+      "LowId": 101523,
+      "HighId": 101524
+    },
+    {
+      "Stat": 141,
+      "LowId": 101607,
+      "HighId": 101608
+    },
+    {
+      "Stat": 139,
+      "LowId": 101595,
+      "HighId": 101596
+    },
+    {
+      "Stat": 166,
+      "LowId": 101745,
+      "HighId": 101746
+    },
+    {
+      "Stat": 117,
+      "LowId": 101481,
+      "HighId": 101482
+    },
+    {
+      "Stat": 158,
+      "LowId": 101697,
+      "HighId": 101698
+    }
+  ],
+  "AdvancedICCBrightClusters": [
+    {
+      "Stat": 277,
+      "LowId": 166121,
+      "HighId": 166122
+    },
+    {
+      "Stat": 276,
+      "LowId": 166109,
+      "HighId": 166110
+    },
+    {
+      "Stat": 281,
+      "LowId": 166169,
+      "HighId": 166170
+    },
+    {
+      "Stat": 280,
+      "LowId": 166157,
+      "HighId": 166158
+    },
+    {
+      "Stat": 316,
+      "LowId": 166193,
+      "HighId": 166194
+    },
+    {
+      "Stat": 279,
+      "LowId": 166145,
+      "HighId": 166146
+    },
+    {
+      "Stat": 317,
+      "LowId": 166205,
+      "HighId": 166206
+    },
+    {
+      "Stat": 278,
+      "LowId": 166133,
+      "HighId": 166134
+    },
+    {
+      "Stat": 319,
+      "LowId": 166229,
+      "HighId": 166230
+    },
+    {
+      "Stat": 282,
+      "LowId": 166181,
+      "HighId": 166182
+    },
+    {
+      "Stat": 102,
+      "LowId": 101335,
+      "HighId": 101336
+    },
+    {
+      "Stat": 103,
+      "LowId": 101341,
+      "HighId": 101342
+    },
+    {
+      "Stat": 107,
+      "LowId": 101365,
+      "HighId": 101366
+    },
+    {
+      "Stat": 105,
+      "LowId": 101353,
+      "HighId": 101354
+    },
+    {
+      "Stat": 137,
+      "LowId": 101581,
+      "HighId": 101582
+    },
+    {
+      "Stat": 17,
+      "LowId": 101779,
+      "HighId": 101780
+    },
+    {
+      "Stat": 151,
+      "LowId": 101659,
+      "HighId": 101660
+    },
+    {
+      "Stat": 116,
+      "LowId": 101473,
+      "HighId": 101474
+    },
+    {
+      "Stat": 128,
+      "LowId": 101545,
+      "HighId": 101546
+    },
+    {
+      "Stat": 152,
+      "LowId": 101665,
+      "HighId": 101666
+    },
+    {
+      "Stat": 111,
+      "LowId": 101443,
+      "HighId": 101444
+    },
+    {
+      "Stat": 121,
+      "LowId": 101503,
+      "HighId": 101504
+    },
+    {
+      "Stat": 142,
+      "LowId": 101611,
+      "HighId": 101612
+    },
+    {
+      "Stat": 165,
+      "LowId": 101737,
+      "HighId": 101738
+    },
+    {
+      "Stat": 148,
+      "LowId": 101755,
+      "HighId": 101756
+    },
+    {
+      "Stat": 93,
+      "LowId": 101329,
+      "HighId": 101330
+    },
+    {
+      "Stat": 163,
+      "LowId": 101725,
+      "HighId": 101726
+    },
+    {
+      "Stat": 95,
+      "LowId": 101378,
+      "HighId": 101379
+    },
+    {
+      "Stat": 161,
+      "LowId": 101713,
+      "HighId": 101714
+    },
+    {
+      "Stat": 164,
+      "LowId": 101731,
+      "HighId": 101732
+    },
+    {
+      "Stat": 144,
+      "LowId": 101623,
+      "HighId": 101624
+    },
+    {
+      "Stat": 96,
+      "LowId": 101761,
+      "HighId": 101762
+    },
+    {
+      "Stat": 154,
+      "LowId": 101677,
+      "HighId": 101678
+    },
+    {
+      "Stat": 153,
+      "LowId": 101671,
+      "HighId": 101672
+    },
+    {
+      "Stat": 126,
+      "LowId": 101533,
+      "HighId": 101534
+    },
+    {
+      "Stat": 92,
+      "LowId": 101323,
+      "HighId": 101324
+    },
+    {
+      "Stat": 155,
+      "LowId": 101683,
+      "HighId": 101684
+    },
+    {
+      "Stat": 147,
+      "LowId": 101641,
+      "HighId": 101642
+    },
+    {
+      "Stat": 97,
+      "LowId": 101390,
+      "HighId": 101391
+    },
+    {
+      "Stat": 123,
+      "LowId": 101515,
+      "HighId": 101516
+    },
+    {
+      "Stat": 150,
+      "LowId": 101653,
+      "HighId": 101654
+    },
+    {
+      "Stat": 167,
+      "LowId": 101749,
+      "HighId": 101750
+    },
+    {
+      "Stat": 109,
+      "LowId": 101431,
+      "HighId": 101432
+    },
+    {
+      "Stat": 343,
+      "LowId": 166241,
+      "HighId": 166242
+    },
+    {
+      "Stat": 110,
+      "LowId": 101437,
+      "HighId": 101438
+    },
+    {
+      "Stat": 90,
+      "LowId": 101311,
+      "HighId": 101312
+    },
+    {
+      "Stat": 19,
+      "LowId": 101791,
+      "HighId": 101792
+    },
+    {
+      "Stat": 114,
+      "LowId": 101461,
+      "HighId": 101462
+    },
+    {
+      "Stat": 100,
+      "LowId": 101396,
+      "HighId": 101397
+    },
+    {
+      "Stat": 127,
+      "LowId": 101539,
+      "HighId": 101540
+    },
+    {
+      "Stat": 130,
+      "LowId": 101410,
+      "HighId": 101411
+    },
+    {
+      "Stat": 1,
+      "LowId": 101809,
+      "HighId": 101810
+    },
+    {
+      "Stat": 181,
+      "LowId": 166001,
+      "HighId": 166002
+    },
+    {
+      "Stat": 221,
+      "LowId": 101815,
+      "HighId": 101816
+    },
+    {
+      "Stat": 125,
+      "LowId": 101527,
+      "HighId": 101528
+    },
+    {
+      "Stat": 104,
+      "LowId": 101347,
+      "HighId": 101348
+    },
+    {
+      "Stat": 118,
+      "LowId": 101485,
+      "HighId": 101486
+    },
+    {
+      "Stat": 91,
+      "LowId": 101317,
+      "HighId": 101318
+    },
+    {
+      "Stat": 101,
+      "LowId": 101402,
+      "HighId": 101403
+    },
+    {
+      "Stat": 134,
+      "LowId": 101563,
+      "HighId": 101564
+    },
+    {
+      "Stat": 383,
+      "LowId": 166301,
+      "HighId": 166302
+    },
+    {
+      "Stat": 318,
+      "LowId": 166217,
+      "HighId": 166218
+    },
+    {
+      "Stat": 132,
+      "LowId": 101422,
+      "HighId": 101423
+    },
+    {
+      "Stat": 160,
+      "LowId": 101707,
+      "HighId": 101708
+    },
+    {
+      "Stat": 168,
+      "LowId": 101384,
+      "HighId": 101385
+    },
+    {
+      "Stat": 149,
+      "LowId": 101647,
+      "HighId": 101648
+    },
+    {
+      "Stat": 145,
+      "LowId": 101629,
+      "HighId": 101630
+    },
+    {
+      "Stat": 136,
+      "LowId": 101575,
+      "HighId": 101576
+    },
+    {
+      "Stat": 159,
+      "LowId": 101701,
+      "HighId": 101702
+    },
+    {
+      "Stat": 120,
+      "LowId": 101497,
+      "HighId": 101498
+    },
+    {
+      "Stat": 106,
+      "LowId": 101359,
+      "HighId": 101360
+    },
+    {
+      "Stat": 112,
+      "LowId": 101449,
+      "HighId": 101450
+    },
+    {
+      "Stat": 21,
+      "LowId": 101803,
+      "HighId": 101804
+    },
+    {
+      "Stat": 129,
+      "LowId": 101551,
+      "HighId": 101552
+    },
+    {
+      "Stat": 162,
+      "LowId": 101719,
+      "HighId": 101720
+    },
+    {
+      "Stat": 157,
+      "LowId": 101689,
+      "HighId": 101690
+    },
+    {
+      "Stat": 94,
+      "LowId": 101372,
+      "HighId": 101373
+    },
+    {
+      "Stat": 381,
+      "LowId": 166277,
+      "HighId": 166278
+    },
+    {
+      "Stat": 380,
+      "LowId": 166265,
+      "HighId": 166266
+    },
+    {
+      "Stat": 133,
+      "LowId": 101557,
+      "HighId": 101558
+    },
+    {
+      "Stat": 119,
+      "LowId": 101491,
+      "HighId": 101492
+    },
+    {
+      "Stat": 113,
+      "LowId": 101455,
+      "HighId": 101456
+    },
+    {
+      "Stat": 143,
+      "LowId": 101617,
+      "HighId": 101618
+    },
+    {
+      "Stat": 156,
+      "LowId": 130005,
+      "HighId": 130006
+    },
+    {
+      "Stat": 20,
+      "LowId": 101797,
+      "HighId": 101798
+    },
+    {
+      "Stat": 122,
+      "LowId": 101509,
+      "HighId": 101510
+    },
+    {
+      "Stat": 108,
+      "LowId": 101425,
+      "HighId": 101426
+    },
+    {
+      "Stat": 229,
+      "LowId": 166049,
+      "HighId": 166050
+    },
+    {
+      "Stat": 231,
+      "LowId": 166073,
+      "HighId": 166074
+    },
+    {
+      "Stat": 228,
+      "LowId": 166037,
+      "HighId": 166038
+    },
+    {
+      "Stat": 233,
+      "LowId": 166085,
+      "HighId": 166086
+    },
+    {
+      "Stat": 227,
+      "LowId": 166025,
+      "HighId": 166026
+    },
+    {
+      "Stat": 234,
+      "LowId": 166097,
+      "HighId": 166098
+    },
+    {
+      "Stat": 226,
+      "LowId": 166013,
+      "HighId": 166014
+    },
+    {
+      "Stat": 230,
+      "LowId": 166061,
+      "HighId": 166062
+    },
+    {
+      "Stat": 115,
+      "LowId": 101467,
+      "HighId": 101468
+    },
+    {
+      "Stat": 382,
+      "LowId": 166289,
+      "HighId": 166290
+    },
+    {
+      "Stat": 146,
+      "LowId": 101635,
+      "HighId": 101636
+    },
+    {
+      "Stat": 18,
+      "LowId": 101785,
+      "HighId": 101786
+    },
+    {
+      "Stat": 16,
+      "LowId": 101773,
+      "HighId": 101774
+    },
+    {
+      "Stat": 131,
+      "LowId": 101416,
+      "HighId": 101417
+    },
+    {
+      "Stat": 135,
+      "LowId": 101569,
+      "HighId": 101570
+    },
+    {
+      "Stat": 124,
+      "LowId": 101521,
+      "HighId": 101522
+    },
+    {
+      "Stat": 141,
+      "LowId": 101605,
+      "HighId": 101606
+    },
+    {
+      "Stat": 139,
+      "LowId": 101593,
+      "HighId": 101594
+    },
+    {
+      "Stat": 166,
+      "LowId": 101743,
+      "HighId": 101744
+    },
+    {
+      "Stat": 117,
+      "LowId": 101479,
+      "HighId": 101480
+    },
+    {
+      "Stat": 158,
+      "LowId": 101695,
+      "HighId": 101696
+    }
+  ],
+  "AdvancedICCFadedClusters": [
+    {
+      "Stat": 277,
+      "LowId": 166117,
+      "HighId": 166118
+    },
+    {
+      "Stat": 276,
+      "LowId": 166105,
+      "HighId": 166106
+    },
+    {
+      "Stat": 281,
+      "LowId": 166165,
+      "HighId": 166166
+    },
+    {
+      "Stat": 280,
+      "LowId": 166153,
+      "HighId": 166154
+    },
+    {
+      "Stat": 316,
+      "LowId": 166189,
+      "HighId": 166190
+    },
+    {
+      "Stat": 279,
+      "LowId": 166141,
+      "HighId": 166142
+    },
+    {
+      "Stat": 317,
+      "LowId": 166201,
+      "HighId": 166202
+    },
+    {
+      "Stat": 278,
+      "LowId": 166129,
+      "HighId": 166130
+    },
+    {
+      "Stat": 319,
+      "LowId": 166225,
+      "HighId": 166226
+    },
+    {
+      "Stat": 282,
+      "LowId": 166177,
+      "HighId": 166178
+    },
+    {
+      "Stat": 102,
+      "LowId": 101406,
+      "HighId": 101334
+    },
+    {
+      "Stat": 103,
+      "LowId": 101339,
+      "HighId": 101340
+    },
+    {
+      "Stat": 107,
+      "LowId": 101363,
+      "HighId": 101364
+    },
+    {
+      "Stat": 105,
+      "LowId": 101351,
+      "HighId": 101352
+    },
+    {
+      "Stat": 137,
+      "LowId": 101579,
+      "HighId": 101580
+    },
+    {
+      "Stat": 17,
+      "LowId": 101777,
+      "HighId": 101778
+    },
+    {
+      "Stat": 151,
+      "LowId": 101657,
+      "HighId": 101658
+    },
+    {
+      "Stat": 116,
+      "LowId": 101471,
+      "HighId": 101472
+    },
+    {
+      "Stat": 128,
+      "LowId": 101543,
+      "HighId": 101544
+    },
+    {
+      "Stat": 152,
+      "LowId": 101663,
+      "HighId": 101664
+    },
+    {
+      "Stat": 111,
+      "LowId": 101441,
+      "HighId": 101442
+    },
+    {
+      "Stat": 121,
+      "LowId": 101501,
+      "HighId": 101502
+    },
+    {
+      "Stat": 142,
+      "LowId": 101609,
+      "HighId": 101610
+    },
+    {
+      "Stat": 165,
+      "LowId": 101735,
+      "HighId": 101736
+    },
+    {
+      "Stat": 148,
+      "LowId": 101753,
+      "HighId": 101754
+    },
+    {
+      "Stat": 93,
+      "LowId": 101327,
+      "HighId": 101328
+    },
+    {
+      "Stat": 163,
+      "LowId": 101723,
+      "HighId": 101724
+    },
+    {
+      "Stat": 95,
+      "LowId": 101376,
+      "HighId": 101377
+    },
+    {
+      "Stat": 161,
+      "LowId": 101711,
+      "HighId": 101712
+    },
+    {
+      "Stat": 164,
+      "LowId": 101729,
+      "HighId": 101730
+    },
+    {
+      "Stat": 144,
+      "LowId": 101621,
+      "HighId": 101622
+    },
+    {
+      "Stat": 96,
+      "LowId": 101759,
+      "HighId": 101760
+    },
+    {
+      "Stat": 154,
+      "LowId": 101675,
+      "HighId": 101676
+    },
+    {
+      "Stat": 153,
+      "LowId": 101669,
+      "HighId": 101670
+    },
+    {
+      "Stat": 126,
+      "LowId": 101531,
+      "HighId": 101532
+    },
+    {
+      "Stat": 92,
+      "LowId": 101321,
+      "HighId": 101322
+    },
+    {
+      "Stat": 155,
+      "LowId": 101681,
+      "HighId": 101682
+    },
+    {
+      "Stat": 147,
+      "LowId": 101639,
+      "HighId": 101640
+    },
+    {
+      "Stat": 97,
+      "LowId": 101388,
+      "HighId": 101389
+    },
+    {
+      "Stat": 123,
+      "LowId": 101513,
+      "HighId": 101514
+    },
+    {
+      "Stat": 150,
+      "LowId": 101651,
+      "HighId": 101652
+    },
+    {
+      "Stat": 167,
+      "LowId": 101747,
+      "HighId": 101748
+    },
+    {
+      "Stat": 109,
+      "LowId": 101429,
+      "HighId": 101430
+    },
+    {
+      "Stat": 343,
+      "LowId": 166237,
+      "HighId": 166238
+    },
+    {
+      "Stat": 110,
+      "LowId": 101435,
+      "HighId": 101436
+    },
+    {
+      "Stat": 90,
+      "LowId": 101309,
+      "HighId": 101310
+    },
+    {
+      "Stat": 19,
+      "LowId": 101789,
+      "HighId": 101790
+    },
+    {
+      "Stat": 114,
+      "LowId": 101459,
+      "HighId": 101460
+    },
+    {
+      "Stat": 100,
+      "LowId": 101394,
+      "HighId": 101395
+    },
+    {
+      "Stat": 127,
+      "LowId": 101537,
+      "HighId": 101538
+    },
+    {
+      "Stat": 130,
+      "LowId": 101408,
+      "HighId": 101409
+    },
+    {
+      "Stat": 1,
+      "LowId": 101807,
+      "HighId": 101808
+    },
+    {
+      "Stat": 181,
+      "LowId": 165997,
+      "HighId": 165998
+    },
+    {
+      "Stat": 221,
+      "LowId": 101813,
+      "HighId": 101814
+    },
+    {
+      "Stat": 125,
+      "LowId": 101525,
+      "HighId": 101526
+    },
+    {
+      "Stat": 104,
+      "LowId": 101345,
+      "HighId": 101346
+    },
+    {
+      "Stat": 118,
+      "LowId": 101483,
+      "HighId": 101484
+    },
+    {
+      "Stat": 91,
+      "LowId": 101315,
+      "HighId": 101316
+    },
+    {
+      "Stat": 101,
+      "LowId": 101400,
+      "HighId": 101401
+    },
+    {
+      "Stat": 134,
+      "LowId": 101561,
+      "HighId": 101562
+    },
+    {
+      "Stat": 383,
+      "LowId": 166297,
+      "HighId": 166298
+    },
+    {
+      "Stat": 318,
+      "LowId": 166213,
+      "HighId": 166214
+    },
+    {
+      "Stat": 132,
+      "LowId": 101420,
+      "HighId": 101421
+    },
+    {
+      "Stat": 160,
+      "LowId": 101705,
+      "HighId": 101706
+    },
+    {
+      "Stat": 168,
+      "LowId": 101382,
+      "HighId": 101383
+    },
+    {
+      "Stat": 149,
+      "LowId": 101645,
+      "HighId": 101646
+    },
+    {
+      "Stat": 145,
+      "LowId": 101627,
+      "HighId": 101628
+    },
+    {
+      "Stat": 136,
+      "LowId": 101573,
+      "HighId": 101574
+    },
+    {
+      "Stat": 159,
+      "LowId": 101699,
+      "HighId": 101700
+    },
+    {
+      "Stat": 120,
+      "LowId": 101495,
+      "HighId": 101496
+    },
+    {
+      "Stat": 106,
+      "LowId": 101357,
+      "HighId": 101358
+    },
+    {
+      "Stat": 112,
+      "LowId": 101447,
+      "HighId": 101448
+    },
+    {
+      "Stat": 21,
+      "LowId": 101801,
+      "HighId": 101802
+    },
+    {
+      "Stat": 129,
+      "LowId": 101549,
+      "HighId": 101550
+    },
+    {
+      "Stat": 162,
+      "LowId": 101717,
+      "HighId": 101718
+    },
+    {
+      "Stat": 157,
+      "LowId": 101687,
+      "HighId": 101688
+    },
+    {
+      "Stat": 94,
+      "LowId": 101333,
+      "HighId": 101371
+    },
+    {
+      "Stat": 381,
+      "LowId": 166273,
+      "HighId": 166274
+    },
+    {
+      "Stat": 380,
+      "LowId": 166261,
+      "HighId": 166262
+    },
+    {
+      "Stat": 133,
+      "LowId": 101555,
+      "HighId": 101556
+    },
+    {
+      "Stat": 119,
+      "LowId": 101489,
+      "HighId": 101490
+    },
+    {
+      "Stat": 113,
+      "LowId": 101453,
+      "HighId": 101454
+    },
+    {
+      "Stat": 143,
+      "LowId": 101615,
+      "HighId": 101616
+    },
+    {
+      "Stat": 156,
+      "LowId": 130003,
+      "HighId": 130004
+    },
+    {
+      "Stat": 20,
+      "LowId": 101795,
+      "HighId": 101796
+    },
+    {
+      "Stat": 122,
+      "LowId": 101507,
+      "HighId": 101508
+    },
+    {
+      "Stat": 108,
+      "LowId": 101369,
+      "HighId": 101370
+    },
+    {
+      "Stat": 229,
+      "LowId": 166045,
+      "HighId": 166046
+    },
+    {
+      "Stat": 231,
+      "LowId": 166069,
+      "HighId": 166070
+    },
+    {
+      "Stat": 228,
+      "LowId": 166033,
+      "HighId": 166034
+    },
+    {
+      "Stat": 233,
+      "LowId": 166081,
+      "HighId": 166082
+    },
+    {
+      "Stat": 227,
+      "LowId": 166021,
+      "HighId": 166022
+    },
+    {
+      "Stat": 234,
+      "LowId": 166093,
+      "HighId": 166094
+    },
+    {
+      "Stat": 226,
+      "LowId": 166009,
+      "HighId": 166010
+    },
+    {
+      "Stat": 230,
+      "LowId": 166057,
+      "HighId": 166058
+    },
+    {
+      "Stat": 115,
+      "LowId": 101465,
+      "HighId": 101466
+    },
+    {
+      "Stat": 382,
+      "LowId": 166285,
+      "HighId": 166286
+    },
+    {
+      "Stat": 146,
+      "LowId": 101633,
+      "HighId": 101634
+    },
+    {
+      "Stat": 18,
+      "LowId": 101783,
+      "HighId": 101784
+    },
+    {
+      "Stat": 16,
+      "LowId": 101771,
+      "HighId": 101772
+    },
+    {
+      "Stat": 131,
+      "LowId": 101414,
+      "HighId": 101415
+    },
+    {
+      "Stat": 135,
+      "LowId": 101567,
+      "HighId": 101568
+    },
+    {
+      "Stat": 124,
+      "LowId": 101519,
+      "HighId": 101520
+    },
+    {
+      "Stat": 141,
+      "LowId": 101603,
+      "HighId": 101604
+    },
+    {
+      "Stat": 139,
+      "LowId": 101591,
+      "HighId": 101592
+    },
+    {
+      "Stat": 166,
+      "LowId": 101741,
+      "HighId": 101742
+    },
+    {
+      "Stat": 117,
+      "LowId": 101477,
+      "HighId": 101478
+    },
+    {
+      "Stat": 158,
+      "LowId": 101693,
+      "HighId": 101694
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "1": {
+      "Ability": 6,
+      "Treatment": 11
+    },
+    "200": {
+      "Ability": 404,
+      "Treatment": 951
+    }
+  },
+  {
+    "1": {
+      "Ability": 16,
+      "Treatment": 11
+    },
+    "200": {
+      "Ability": 414,
+      "Treatment": 1005
+    }
+  },
+  {
+    "1": {
+      "Ability": 16,
+      "Treatment": 11
+    },
+    "200": {
+      "Ability": 464,
+      "Treatment": 1005
+    }
+  }
+]

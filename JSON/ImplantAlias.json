@@ -1,0 +1,52 @@
+{
+  "Eye": [
+    "eye"
+  ],
+  "Head": [
+    "head",
+    "brain"
+  ],
+  "Ear": [
+    "ear",
+    "ears"
+  ],
+  "RightArm": [
+    "rightarm",
+    "rarm"
+  ],
+  "Chest": [
+    "chest",
+    "body"
+  ],
+  "LeftArm": [
+    "leftarm",
+    "larm"
+  ],
+  "RightWrist": [
+    "rightwrist",
+    "rwrist"
+  ],
+  "Waist": [
+    "waist"
+  ],
+  "LeftWrist": [
+    "leftwrist",
+    "lwrist"
+  ],
+  "RightHand": [
+    "righthand",
+    "rhand"
+  ],
+  "Leg": [
+    "leg",
+    "legs"
+  ],
+  "LeftHand": [
+    "lefthand",
+    "lhand"
+  ],
+  "Feet": [
+    "feet",
+    "foot"
+  ]
+}

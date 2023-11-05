@@ -1,0 +1,12 @@
+﻿<a href="text://<font color=#{{ color.darkblue }}><font color=#{{ color.lightgreen }}>::Implant Aliases::</font>
+{{~ for alias in implantalias }}
+<font color=#{{ color.lightblue }}>{{ alias.key }} - </font>{{ alias.value }}
+{{- end }}
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+
+<font color=#{{ color.lightgreen }}>::Cluster Aliases::</font>
+{{ for alias in clusteralias }}
+<font color=#{{ color.lightblue }}>{{ alias.key }} - </font>{{ alias.value }}
+{{- end }}
+">Alias</a></font></font>

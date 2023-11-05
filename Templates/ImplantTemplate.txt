@@ -1,0 +1,29 @@
+﻿<a href="text://<font color=#{{ color.darkblue }}>Quality Level:
+
+{{ for ql in qlrange ~}}
+<a href='chatcmd:///tell {{ botname }} Designer Modify {{ index }} {{ ql }}'>{{if ql < 100 }}0{{ ql }}{{ else }}{{ ql }}{{ end }}</a><c> | </c>
+{{- end }}
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+Shiny Clusters:
+
+{{ for cluster in shinyclusters ~}}
+<a href='chatcmd:///tell {{ botname }} Designer Modify {{ index }} {{ cluster.tag }}'>{{ cluster.name}}</a>
+{{ end ~}}
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+Bright Clusters:
+
+{{ for cluster in brightclusters ~}}
+<a href='chatcmd:///tell {{ botname }} Designer Modify {{ index }} {{ cluster.tag }}'>{{ cluster.name}}</a>
+{{ end ~}}
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+Faded Clusters:
+
+{{ for cluster in fadedclusters ~}}
+<a href='chatcmd:///tell {{ botname }} Designer Modify {{ index }} {{ cluster.tag }}'>{{ cluster.name}}</a>
+{{ end ~}}
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+">{{ name }}</a></font></font>
