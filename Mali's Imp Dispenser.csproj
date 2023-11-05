@@ -291,6 +291,7 @@
     <None Include="JSON\ClusterAlias.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Readme.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
