@@ -6,7 +6,9 @@ To be used with AOSharp Clientless. This bot was made to fully automate implant 
 - Laddering command to automatically make stamina / agility / treatment implants
 
 Help command:
+
 ![Alt Text](Preview.png)
 
 Preview video:
+
 [Watch the preview video here](https://streamable.com/63ilsx)
