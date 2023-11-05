@@ -1,4 +1,4 @@
-To be used with AOSharp Clientless. This bot was made to fully automate implant making and buying. It features:
+To be used with AOSharp Clientless. This bot was made to fully automate implant making and buying. The bot has to be placed inside an implant shop (like Borealis layout one) close to the 'Advanced Shiny Cluster' shop. It features:
 
 - AOsetup links for full autonomous buying / tradeskilling
 - Alternatively use the designer command

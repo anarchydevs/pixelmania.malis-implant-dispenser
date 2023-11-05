@@ -46,32 +46,25 @@ namespace MalisImpDispenser
             Logger.Information("Bot Init");
             Utils.OpenBags();
 
-            var clinicCheck = Inventory.Items.FirstOrDefault(x => x.Name == "Implant Disassembly Clinic");
             var bagCheck = Inventory.Items.Where(x => x.UniqueIdentity.Type == IdentityType.Container && x.Slot.Type == IdentityType.Inventory).ToList();
 
             bool errorsFounds = false;
 
-            if (clinicCheck == null || clinicCheck.Slot.Instance != 0x40)
+            if (!Inventory.Items.Any(x => x.Name == "Implant Disassembly Clinic" && x.Slot.Instance == 0x40))
             {
                 Logger.Error("Disassembly clinic not found / or is in wrong slot. To fix the slot, empty your inventory then put the clinic in your inventory.");
                 errorsFounds = true;
             }
 
-            if (bagCheck.Count() == 0)
+            if (Inventory.NumFreeSlots < 12)
             {
-                Logger.Error("No bags found.");
+                Logger.Error("Need at least 12 free inventory slots.");
                 errorsFounds = true;
             }
 
-            if (bagCheck.Count() == 1 && bagCheck[0].Slot.Instance != 0x41)
+            if (bagCheck.Count() == 0 || bagCheck.Any(x => Inventory.GetNextAvailableSlot() < x.Slot.Instance))
             {
-                Logger.Error("Bag(s) are in wrong slots. Put all bags inside your bank, while leaving the clinic in your inventory, then withdraw all bags.");
-                errorsFounds = true;
-            }
-
-            if (bagCheck.Any(x => Inventory.GetNextAvailableSlot() < x.Slot.Instance))
-            {
-                Logger.Error("Bag(s) are in wrong slots. Put all bags inside your bank, while leaving the clinic in your inventory, then withdraw all bags.");
+                Logger.Error("Bags not found / are in wrong slots. Put all bags inside your bank, while leaving the clinic in your inventory, then withdraw them.");
                 errorsFounds = true;
             }
 
