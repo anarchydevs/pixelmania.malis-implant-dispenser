@@ -294,6 +294,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Preview.png" />
     <Content Include="BT\Views\BtNodeViewBold.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
