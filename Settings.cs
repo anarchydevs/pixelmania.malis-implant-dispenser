@@ -60,7 +60,7 @@ namespace MalisItemFinder
                 if (!Directory.Exists(directoryPath))
                     Directory.CreateDirectory(directoryPath);
 
-                PopulateSettings(0, 0, 0, 0, 0, 0, 10, 30 * 60, 60, new Dictionary<int, int>());
+                PopulateSettings(0, 0, 0, 0, 0, 0, 10, 60, 60 * 30, new Dictionary<int, int>());
                 Save();
             }
             catch (Exception ex)
