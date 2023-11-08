@@ -31,9 +31,28 @@ namespace MalisImpDispenser
             {
                 TradeActionEvent(sender, new TradeActionArgs(tradeMsg.Identity, new Identity((IdentityType)tradeMsg.Param1, tradeMsg.Param2), tradeMsg.Action));
             }
-            else if (msgBody is CharacterActionMessage actionMsg && actionMsg.Action == CharacterActionType.DeleteItem)
+            else if (msgBody is CharacterActionMessage actionMsg)
             {
-                DeleteItemActionEvent(sender, new CharacterActionArgs());
+                switch (actionMsg.Action)
+                {
+                    case CharacterActionType.DeleteItem:
+                        DeleteItemActionEvent(sender, new CharacterActionArgs());
+                        break;
+                    case CharacterActionType.TradeskillSource:
+                        Logger.Information($"[REC] Tradeskill Source");
+                        break;
+                    case CharacterActionType.TradeskillTarget:
+                        Logger.Information($"[REC] Tradeskill Target");
+                        break;
+                    case CharacterActionType.TradeskillNotValid:
+                        Logger.Information($"[REC] Tradeskill Not Valid");
+                        break;
+                    case CharacterActionType.TradeskillResult:
+                        Logger.Information($"[REC] Tradeskill Result, result id: {actionMsg.Parameter2}");
+                        break;
+                    default:
+                        break;
+                }
             }
             else if (msgBody is ContainerAddItem contAddItem && contAddItem.Target.Type == IdentityType.Container)
             {
