@@ -47,7 +47,7 @@ namespace MalisImpDispenser
             if (!_orderTimer.HasStarted())
             {
                 _orderTimer.Start();
-                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Ready for pickup. Approach me closely and I will engage a trade. Expiring in {_orderTimer.TimeLimit / 60f} minutes"));
+                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Order ready for pickup. Approach me closely and I will engage a trade. Expiring in {_orderTimer.TimeLimit / 60f} minutes.\n I require the following in order to accept the trade:\n - Credits: {TotalCredits}\n - Backpack (non unique)"));
             }
 
             _orderTimer.Tick(intervalInSeconds);
@@ -87,14 +87,4 @@ namespace MalisImpDispenser
 
         public bool IsCompleted() => Status() == 1;
     }
-
-    //public class TradeTarget : Timer
-    //{
-    //    public int Instance;
-
-    //    public TradeTarget(int charId, float expiretyTimeMinutes) : base(expiretyTimeMinutes)
-    //    {
-    //        Instance = charId;
-    //    }
-    //}
 }

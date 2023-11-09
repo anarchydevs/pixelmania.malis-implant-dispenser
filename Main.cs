@@ -132,7 +132,7 @@ namespace MalisImpDispenser
 
         private void PrivateMessageAction(PrivateMessage privMsgArgs)
         {
-            Logger.Information(privMsgArgs.Message);    
+            Logger.Information($"[{privMsgArgs.SenderName}] : {privMsgArgs.Message}");    
 
             if (!CommandProcessor.TryProcess(privMsgArgs, out CommandType command, out CommandBase cmdBase))
                 return;

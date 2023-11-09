@@ -59,6 +59,7 @@ namespace MalisImpDispenser
             {
                 case StatType.Ability:
                 case StatType.Skill:
+                case StatType.Ac:
                     switch (clusterItem.Type)
                     {
                         case ClusterType.Shiny:
@@ -80,6 +81,10 @@ namespace MalisImpDispenser
                             return 200f;
                     }
                     break;
+                default:
+                    Logger.Warning("This should never happen. Report it.");
+                    break;
+
             }
 
             return 0f;
