@@ -47,7 +47,7 @@ namespace MalisImpDispenser
             if (!_orderTimer.HasStarted())
             {
                 _orderTimer.Start();
-                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Order ready for pickup. Expiring in {_orderTimer.TimeLimit / 60f} minutes"));
+                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Ready for pickup. Approach me closely and I will engage a trade. Expiring in {_orderTimer.TimeLimit / 60f} minutes"));
             }
 
             _orderTimer.Tick(intervalInSeconds);

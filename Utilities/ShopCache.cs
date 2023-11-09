@@ -109,8 +109,10 @@ namespace MalisImpDispenser
 
         private static ShopItem FindItem(ImplantItem implantToFind)
         {
-            var shop = _implantShops[implantToFind.Ql >= 100 ? ShopType.AdvancedICCImplants : ShopType.BasicICCImplants];
+            var shopToLook = implantToFind.Ql >= 110 ? ShopType.AdvancedICCImplants : ShopType.BasicICCImplants;
+            var shop = _implantShops[shopToLook];
 
+            Logger.Information(shopToLook.ToString());
             ImplantItem closestLowerItem = shop.Value
                 .Where(item => item.Slot == implantToFind.Slot && item.Ql <= implantToFind.Ql)
                 .OrderByDescending(item => item.Ql)
