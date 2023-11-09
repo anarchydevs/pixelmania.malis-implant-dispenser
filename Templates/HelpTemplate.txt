@@ -60,4 +60,13 @@ Currently only works with the given syntax. I might expand this command in the f
 <font color=#{{ color.darkblue}}>The status command will show you your current order status which contains information such as: expirety time, credit requirement, order process track.</font>
 
 <img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
+
+<font color=#{{ color.lightgreen }}>::Alias Command:: </font>
+
+<font color=#{{ color.orange }}>Syntax:</font>
+	- alias
+
+<font color=#{{ color.darkblue}}>Displays all aliases for implant creation.</font>
+
+<img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
 ">Help</a></font></font>
