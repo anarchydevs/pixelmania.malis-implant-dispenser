@@ -8,6 +8,8 @@ using SmokeLounge.AOtomation.Messaging.GameData;
 using SmokeLounge.AOtomation.Messaging.Messages;
 using SmokeLounge.AOtomation.Messaging.Messages.N3Messages;
 using AOSharp.Common.GameData;
+using System.Threading.Tasks;
+using AOSharp.Clientless.Logging;
 
 namespace MalisImpDispenser
 {
@@ -26,13 +28,22 @@ namespace MalisImpDispenser
 
         internal static void Tradeskill(Identity sourceIdentity, Identity destinationIdentity, int finalQl)
         {
-            TradeSkillAdd(CharacterActionType.TradeskillSourceChanged, sourceIdentity);
-            TradeSkillAdd(CharacterActionType.TradeskillTargetChanged, destinationIdentity);
+            //Temporary fix to see if it fixes a bug causing only one packet to be sent
 
-            Client.Send(new CharacterActionMessage
+            Task.Run(async () =>
             {
-                Action = CharacterActionType.TradeskillBuildPressed,
-                Target = new Identity(IdentityType.None, finalQl),
+                TradeSkillAdd(CharacterActionType.TradeskillSourceChanged, sourceIdentity);
+
+                await Task.Delay(500);
+                TradeSkillAdd(CharacterActionType.TradeskillTargetChanged, destinationIdentity);
+
+                await Task.Delay(500);
+
+                Client.Send(new CharacterActionMessage
+                {
+                    Action = CharacterActionType.TradeskillBuildPressed,
+                    Target = new Identity(IdentityType.None, finalQl),
+                });
             });
         }
 
