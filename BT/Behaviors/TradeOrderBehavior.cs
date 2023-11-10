@@ -82,6 +82,8 @@ namespace MalisImpDispenser
             }
 
             Trade.Open(c.TradeOrderTarget);
+
+            Client.SendPrivateMessage(c.TradeOrderTarget.Instance, "Opening trade with you, if you don't see it please rezone.");
             Logger.Debug($"Opening trade with {c.TradeOrderTarget}");
 
             return BehaviourStatus.Succeeded;
