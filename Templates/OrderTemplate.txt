@@ -25,10 +25,10 @@ Add new implant:
 
 {{ for implant in implantpreset ~}}
 <a href='chatcmd:///tell {{ botname }} Designer Create {{ implant.type }}'>[{{ implant.name }}]</a><c> </c>
+
+<a href='chatcmd:///tell {{ botname }} Designer Order'>[Place Order]</a><c> </c>
 {{- end }}
 {{ else }}
 {{ end }}
-
-<a href='chatcmd:///tell {{ botname }} Designer Order'>[Place Order]</a><c> </c>
 
 ">{{ if previewmode == false }}[{{ order.completed }} / {{ order.total }}]{{ else }}[{{ order.total }}]{{ end }} {{ name }}</a></font></font>
