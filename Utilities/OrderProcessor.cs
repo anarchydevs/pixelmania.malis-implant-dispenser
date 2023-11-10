@@ -66,10 +66,12 @@ namespace MalisImpDispenser
                 foreach (var item in bag.Items)
                     item.Delete();
 
-                Main.Settings.Blacklist.Add(charId, order.TotalCredits);
+                // Main.Settings.Blacklist.Add(charId, order.TotalCredits);
                 Main.Settings.Save();
 
-                Client.SendPrivateMessage(charId, ScriptTemplate.RespondMsg(Color.Red, $"Order expired, you have been blacklisted. You can trade me your debt of {Main.Settings.Blacklist[charId]} credits to get removed."));
+                Client.SendPrivateMessage(charId, ScriptTemplate.RespondMsg(Color.Red, $"Order expired, if something went wrong, please provide feedback to the host in order to get it resolved for the future. Thanks for your patience."));
+
+                // Client.SendPrivateMessage(charId, ScriptTemplate.RespondMsg(Color.Red, $"Order expired, you have been blacklisted. You can trade me your debt of {Main.Settings.Blacklist[charId]} credits to get removed."));
             }
 
             Orders.Remove(charId);
