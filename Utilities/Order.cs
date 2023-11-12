@@ -47,7 +47,7 @@ namespace MalisImpDispenser
             if (!_orderTimer.HasStarted())
             {
                 _orderTimer.Start();
-                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Order ready for pickup. Approach me closely and I will engage a trade. Expiring in {_orderTimer.TimeLimit / 60f} minutes.\n I require the following in order to accept the trade:\n - Credits: {TotalCredits}\n - Backpack (non unique)"));
+                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Order ready for pickup. Short guidelines:\n - Approach me closely and I will engage a trade when I am ready. \n - If I am processing another order (you will notice me moving my hands), please wait patiently\n - If I am not engaging a trade AND idling around (not moving my hands), please report the issue to the host.\n - Your timer will only tick down if I am not processing any other orders.\nExpire time is set to {_orderTimer.TimeLimit / 60f} minutes.\n I require the following in order to accept the trade:\n - Credits: {TotalCredits}\n - Backpack (non unique)"));
             }
 
             _orderTimer.Tick(intervalInSeconds);

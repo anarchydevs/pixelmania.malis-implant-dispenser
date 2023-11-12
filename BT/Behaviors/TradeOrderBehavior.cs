@@ -22,11 +22,11 @@ namespace MalisImpDispenser
                 .Sequence($"Trade Player Sequence")
                     .Do("Any Trade Targets Available?", AnyTradeTarget)
                     .Do("Trade player", TradePlayer)
-                    .Do("Shop Opened Event", c => EventTrigger.Status("TradeOpened"))
+                    .Do("Shop Opened Event", IsTradeOpenEvent)
                     .Do("Give implant bag", GiveImplantBag)
-                    .Do("Trade add item event", c => EventTrigger.Status("TradeAddItem"))
+                    .Do("Trade add item event", TradeAddItemEvent)
                     .Do("Confirm trade", ConfirmTrade)
-                    .Do("Trade confirm event", c => EventTrigger.Status("TradeConfirm"))
+                    .Do("Trade confirm event", TradeConfirmEvent)
                     .Do("Accept trade", TradeAccept)
                     .Do("Accept trade", TradeCompleted)
                     .Do("Complete order", CompleteOrder)
@@ -34,6 +34,48 @@ namespace MalisImpDispenser
                 .End()
             .End()
             .Build();
+        }
+
+        private static BehaviourStatus TradeAddItemEvent(BotContext context)
+        {
+            if (!Trade.IsTrading)
+                return BehaviourStatus.Failed;
+
+            return EventTrigger.Status("TradeAddItem");
+        }
+
+
+        private static BehaviourStatus TradeConfirmEvent(BotContext context)
+        {
+            if (!Trade.IsTrading)
+                return BehaviourStatus.Failed;
+
+           return EventTrigger.Status("TradeConfirm");
+        }
+
+        private static BehaviourStatus IsTradeOpenEvent(BotContext c)
+        {
+            if (Trade.IsTrading)
+            {
+                Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, "I have opened trade with you, if you don't see it please rezone."));
+                return BehaviourStatus.Succeeded;
+            }
+
+            var tradeOpened = EventTrigger.Status("TradeOpened");
+            var alreadyInTrade = EventTrigger.Status("AlreadyInTrade");
+
+            if (tradeOpened == BehaviourStatus.Succeeded)
+            {
+                Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, "I have opened trade with you, if you don't see it please rezone."));
+                return BehaviourStatus.Succeeded;
+            }
+            else if (alreadyInTrade == BehaviourStatus.Succeeded)
+            {
+                Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, $"You are already in a trade. Please cancel your current trade."));
+                return BehaviourStatus.Failed;
+            }
+
+            return BehaviourStatus.Running;
         }
 
         private static BehaviourStatus TradeCompleted(BotContext c)
@@ -47,9 +89,16 @@ namespace MalisImpDispenser
         private static BehaviourStatus AnyTradeTarget(BotContext c)
         {
             c.TradeOrderTarget = Identity.None;
+            DynamicEvent.Reset();
 
             if (OrderProcessor.Orders.Count() == 0)
                 return BehaviourStatus.Failed;
+
+            if (Trade.IsTrading)
+            {
+                Client.SendPrivateMessage(Trade.CurrentTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, $"Please don't engage trades with me. If your order is complete, move very closely to me and wait for my trade request."));
+                Trade.Decline();
+            }
 
             foreach (Dynel dynel in DynelManager.Players)
             {
@@ -75,15 +124,13 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus TradePlayer(BotContext c)
         {
-            if (Trade.IsTrading)
+            if (Trade.IsTrading && Trade.CurrentTarget != c.TradeOrderTarget)
             {
                 Trade.Decline();
                 return BehaviourStatus.Failed;
             }
 
             Trade.Open(c.TradeOrderTarget);
-
-            Client.SendPrivateMessage(c.TradeOrderTarget.Instance, "Opening trade with you, if you don't see it please rezone.");
             Logger.Debug($"Opening trade with {c.TradeOrderTarget}");
 
             return BehaviourStatus.Succeeded;
@@ -91,6 +138,9 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus GiveImplantBag(BotContext c)
         {
+            if (!Trade.IsTrading)
+                return BehaviourStatus.Failed;
+
             if (!OrderProcessor.Orders.TryGetValue(c.TradeOrderTarget.Instance, out Order order))
                 return BehaviourStatus.Failed;
 
@@ -100,6 +150,8 @@ namespace MalisImpDispenser
                 return BehaviourStatus.Failed;
 
             Logger.Information($"Adding to trade: {bag.UniqueIdentity} {bag.Slot}");
+            Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, $"Inserting backpack to trade. If you don't see the backpack, rezone."));
+
             Trade.AddItem(bag.Slot);
 
             return BehaviourStatus.Succeeded;

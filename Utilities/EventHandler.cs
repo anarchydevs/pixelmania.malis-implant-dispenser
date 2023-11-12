@@ -39,16 +39,16 @@ namespace MalisImpDispenser
                         DeleteItemActionEvent(sender, new CharacterActionArgs());
                         break;
                     case CharacterActionType.TradeskillSource:
-                        Logger.Information($"[REC] Tradeskill Source");
+                        TradeskillSourceEvent(sender, new CharacterActionArgs());
                         break;
                     case CharacterActionType.TradeskillTarget:
-                        Logger.Information($"[REC] Tradeskill Target");
+                        TradeskillTargetEvent(sender, new CharacterActionArgs());
                         break;
                     case CharacterActionType.TradeskillNotValid:
-                        Logger.Information($"[REC] Tradeskill Not Valid");
+                        TradeskillNotValidEvent(sender, new CharacterActionArgs());
                         break;
                     case CharacterActionType.TradeskillResult:
-                        Logger.Information($"[REC] Tradeskill Result, result id: {actionMsg.Parameter2}");
+                        TradeskillResultEvent(sender, new CharacterActionArgs());
                         break;
                     default:
                         break;
@@ -57,6 +57,20 @@ namespace MalisImpDispenser
             else if (msgBody is ContainerAddItem contAddItem && contAddItem.Target.Type == IdentityType.Container)
             {
                 ContainerAddItemActionEvent(sender,new ContainerAddItemActionArgs());
+            }
+            else if (msgBody is FeedbackMessage feedBackMsg)
+            {
+                switch (feedBackMsg.MessageId)
+                {
+                    case 173819685:
+                        AlreadyInTradeEvent(sender, new FeedbackMessageArgs());
+                        break;
+                    case 220669556:
+                        TradeskillFailedEvent(sender, new FeedbackMessageArgs());
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -106,6 +120,36 @@ namespace MalisImpDispenser
         {
             DynamicEvent.Trigger("ContainerAddItem");
         }
+
+        private static void TradeskillSourceEvent(object sender, CharacterActionArgs e)
+        {
+            DynamicEvent.Trigger("TradeskillSource");
+        }
+
+        private static void TradeskillTargetEvent(object sender, CharacterActionArgs e)
+        {
+            DynamicEvent.Trigger("TradeskillTarget");
+        }
+
+        private static void TradeskillResultEvent(object sender, CharacterActionArgs e)
+        {
+            DynamicEvent.Trigger("TradeskillResult");
+        }
+
+        private static void TradeskillNotValidEvent(object sender, CharacterActionArgs e)
+        {
+            DynamicEvent.Trigger("TradeskillNotValid");
+        }
+
+        private static void AlreadyInTradeEvent(object sender, FeedbackMessageArgs e)
+        {
+            DynamicEvent.Trigger("AlreadyInTrade");
+        }
+
+        private static void TradeskillFailedEvent(object sender, FeedbackMessageArgs e)
+        {
+            DynamicEvent.Trigger("TradeskillFailed");
+        }
     }
 
     public class TradeActionArgs : EventArgs
@@ -128,6 +172,7 @@ namespace MalisImpDispenser
         {
         }
     }
+
     public class ContainerAddItemActionArgs : EventArgs
     {
         public ContainerAddItemActionArgs()
@@ -135,7 +180,12 @@ namespace MalisImpDispenser
         }
     }
 
-
+    public class FeedbackMessageArgs : EventArgs
+    {
+        public FeedbackMessageArgs()
+        {
+        }
+    }
     public class PrivateMessageActionArgs : EventArgs
     {
         public uint Sender { get; }

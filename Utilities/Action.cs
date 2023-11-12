@@ -26,28 +26,16 @@ namespace MalisImpDispenser
             });
         }
 
-        internal static void Tradeskill(Identity sourceIdentity, Identity destinationIdentity, int finalQl)
+        internal static void Tradeskill(int finalQl)
         {
-            //Temporary fix to see if it fixes a bug causing only one packet to be sent
-
-            Task.Run(async () =>
+            Client.Send(new CharacterActionMessage
             {
-                TradeSkillAdd(CharacterActionType.TradeskillSourceChanged, sourceIdentity);
-
-                await Task.Delay(500);
-                TradeSkillAdd(CharacterActionType.TradeskillTargetChanged, destinationIdentity);
-
-                await Task.Delay(500);
-
-                Client.Send(new CharacterActionMessage
-                {
-                    Action = CharacterActionType.TradeskillBuildPressed,
-                    Target = new Identity(IdentityType.None, finalQl),
-                });
+                Action = CharacterActionType.TradeskillBuildPressed,
+                Target = new Identity(IdentityType.None, finalQl),
             });
         }
 
-        private static void TradeSkillAdd(CharacterActionType type, Identity identity)
+        internal static void TradeSkillAdd(CharacterActionType type, Identity identity)
         {
             Client.Send(new CharacterActionMessage
             {

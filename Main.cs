@@ -29,7 +29,7 @@ namespace MalisImpDispenser
 
             Settings = new Settings($"{pluginDir}\\JSON");
             Settings.Load();
-            BotBehavior = new BotBehavior(100);
+            BotBehavior = new BotBehavior(250);
 
             EventHandler.Load();
 
