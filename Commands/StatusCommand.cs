@@ -17,7 +17,10 @@ namespace MalisImpDispenser
         internal static void Process(StatusCmd cmd)
         {
             if (!OrderProcessor.Orders.TryGetValue(cmd.RequesterId, out Order order))
+            {
+                Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, "You don't have an active order."));
                 return;
+            }
 
             Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.OrderTicket(order));
         }
