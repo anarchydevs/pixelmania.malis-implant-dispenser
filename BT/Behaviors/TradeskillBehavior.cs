@@ -15,7 +15,7 @@ namespace MalisImpDispenser
 {
     internal static class TradeskillBehavior
     {
-        private static AutoResetInterval _redoTimer = new AutoResetInterval(10000);
+        private static AutoResetInterval _internalReset = new AutoResetInterval(10000);
 
         internal static IBehaviour<BotContext> Process()
         {
@@ -52,7 +52,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus ItemTradeskillEvent(BotContext c)
         {
-            if (_redoTimer.Elapsed)
+            if (_internalReset.Elapsed)
                 return BehaviourStatus.Succeeded;
 
             if (EventTrigger.Status("TradeskillFailed") == BehaviourStatus.Succeeded)
@@ -68,7 +68,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus ItemDeleteEvent(BotContext context)
         {
-            if (_redoTimer.Elapsed)
+            if (_internalReset.Elapsed)
                 return BehaviourStatus.Succeeded;
 
             if (EventTrigger.Status("TradeskillFailed") == BehaviourStatus.Succeeded)
@@ -79,7 +79,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus TradeskillSourceEvent(BotContext context)
         {
-            if (_redoTimer.Elapsed)
+            if (_internalReset.Elapsed)
                 return BehaviourStatus.Succeeded;
 
             return EventTrigger.Status("TradeskillSource");
@@ -87,7 +87,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus TradeskillTargetEvent(BotContext context)
         {
-            if (_redoTimer.Elapsed)
+            if (_internalReset.Elapsed)
                 return BehaviourStatus.Succeeded;
 
             return EventTrigger.Status("TradeskillTarget");
@@ -95,7 +95,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus TradeskillResultEvent(BotContext context)
         {
-            if (_redoTimer.Elapsed)
+            if (_internalReset.Elapsed)
                 return BehaviourStatus.Succeeded;
 
             if (EventTrigger.Status("TradeskillResult") == BehaviourStatus.Succeeded)
@@ -161,7 +161,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus GetNextClusters(BotContext c)
         {
-            _redoTimer.Reset();
+            _internalReset.Reset();
             DynamicEvent.Reset();
             Logger.Information("Resetting events");
 

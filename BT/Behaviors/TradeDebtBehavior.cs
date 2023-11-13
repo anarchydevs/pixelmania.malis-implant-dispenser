@@ -34,7 +34,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus AnyTradeTarget(BotContext c)
         {
-            if (OrderProcessor.Orders.Count(x=>x.Value.Completed != x.Value.Total)!= 0)
+            if (OrderProcessor.Orders.Count(x=>x.Value.Tradeskilled != x.Value.Total)!= 0)
                 return BehaviourStatus.Failed;
 
             c.TradeDebtTarget = Identity.None;
@@ -74,7 +74,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus ConfirmTrade(BotContext c)
         {
-            if (OrderProcessor.Orders.Count(x => x.Value.Completed != x.Value.Total) != 0)
+            if (OrderProcessor.Orders.Count(x => x.Value.Tradeskilled != x.Value.Total) != 0)
             {
                 if (Trade.IsTrading)
                     return BehaviourStatus.Failed;

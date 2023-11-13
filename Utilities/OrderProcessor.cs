@@ -37,10 +37,7 @@ namespace MalisImpDispenser
                 if (!_updateLoop.Elapsed)
                     return;
 
-                if (Orders.Count() == 0)
-                    return;
-
-                foreach (var order in Orders.ToDictionary(x => x.Key, y => y.Value))
+                foreach (var order in Orders.Where(x=>x.Value.IsCompleted()).ToDictionary(x => x.Key, y => y.Value))
                     order.Value.Tick(2);
             }
             catch (Exception ex)

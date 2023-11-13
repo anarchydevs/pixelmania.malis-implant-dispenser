@@ -105,6 +105,9 @@ namespace MalisImpDispenser
                 case TradeAction.UpdateCredits:
                     DynamicEvent.Trigger("TradeUpdateCredits");
                     break;
+                case TradeAction.Decline:
+                    DynamicEvent.Trigger("TradeDecline");
+                    break;
                 case TradeAction.OtherPlayerAddItem:
                     DynamicEvent.Trigger("TradeOtherPlayerAddItem");
                     break;

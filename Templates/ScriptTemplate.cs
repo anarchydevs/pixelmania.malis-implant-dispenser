@@ -77,7 +77,7 @@ namespace MalisImpDispenser
                 Order = new
                 {
                     Expire = string.Format("{0:D2}:{1:D2}", timeSpan.Minutes, timeSpan.Seconds),
-                    Completed = order.Completed,
+                    Completed = order.Tradeskilled,
                     Total = order.Total,
                     Credits = order.TotalCredits.ToString("N0", CultureInfo.InvariantCulture),
                     Limit = order.Limit,

@@ -14,7 +14,7 @@ namespace MalisImpDispenser
         internal int Limit;
         internal List<ImplantPreset> ImplantPresets = new List<ImplantPreset>();
         protected int RequesterId;
-        internal int Completed => ImplantPresets.Count(x => x.Tradeskilled);
+        internal int Tradeskilled => ImplantPresets.Count(x => x.Tradeskilled);
         internal readonly Identity BagIdentity;
         internal float RemainingTime => _orderTimer.TimeRemains;
         private Timer _orderTimer;
@@ -47,8 +47,20 @@ namespace MalisImpDispenser
             if (!_orderTimer.HasStarted())
             {
                 _orderTimer.Start();
-                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Order ready for pickup. Short guidelines:\n - Approach me closely and I will engage a trade when I am ready. \n - If I am processing another order (you will notice me moving my hands), please wait patiently\n - If I am not engaging a trade AND idling around (not moving my hands), please report the issue to the host.\n - Your timer will only tick down if I am not processing any other orders.\nExpire time is set to {_orderTimer.TimeLimit / 60f} minutes.\n I require the following in order to accept the trade:\n - Credits: {TotalCredits}\n - Backpack (non unique)"));
+                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Green, $"Order ready for pickup. Expire time is set to 30 minutes.\n"+
+                    $" I require the following in order to accept the trade:\n" +
+                    $" - {TotalCredits} credits\n" +
+                    $" - Backpack (non unique)"));
+
+                Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Orange, $" Short guidelines:\n" +
+                    $" - Approach me closely and I will engage a trade when I am ready. \n - If I am processing another order (you will notice me moving my hands), please wait patiently\n" +
+                    $" - If I am not engaging a trade with you AND idling around (not moving my hands), please report the issue to the host.\n" +
+                    $" - Your timer will only tick down if I am not processing any other orders.\n\n"));
+
             }
+
+            if (OrderProcessor.ActiveOrders.Count > 0)
+                return false;
 
             _orderTimer.Tick(intervalInSeconds);
 
@@ -83,7 +95,7 @@ namespace MalisImpDispenser
 
         public bool CanOrder() => Total < Limit;
 
-        public float Status() => (float)Completed / Total;
+        public float Status() => (float)Tradeskilled / Total;
 
         public bool IsCompleted() => Status() == 1;
     }

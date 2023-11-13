@@ -28,7 +28,7 @@ namespace MalisImpDispenser
                     .Do("Confirm trade", ConfirmTrade)
                     .Do("Trade confirm event", TradeConfirmEvent)
                     .Do("Accept trade", TradeAccept)
-                    .Do("Accept trade", TradeCompleted)
+                    .Do("Trade completed event", TradeCompletedEvent)
                     .Do("Complete order", CompleteOrder)
                     .Do("Clear unused bags", ClearUnusedBags)
                 .End()
@@ -38,27 +38,38 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus TradeAddItemEvent(BotContext context)
         {
-            if (!Trade.IsTrading)
+            if (EventTrigger.Status("TradeDecline") == BehaviourStatus.Succeeded)
                 return BehaviourStatus.Failed;
 
-            return EventTrigger.Status("TradeAddItem");
+            if (EventTrigger.Status("TradeAddItem") == BehaviourStatus.Succeeded)
+                return BehaviourStatus.Succeeded;
+
+            return BehaviourStatus.Running;
         }
 
 
         private static BehaviourStatus TradeConfirmEvent(BotContext context)
         {
-            if (!Trade.IsTrading)
+            if (EventTrigger.Status("TradeDecline") == BehaviourStatus.Succeeded)
                 return BehaviourStatus.Failed;
 
-           return EventTrigger.Status("TradeConfirm");
+            if (EventTrigger.Status("TradeConfirm") == BehaviourStatus.Succeeded)
+                return BehaviourStatus.Succeeded;
+
+            return BehaviourStatus.Running;
         }
 
         private static BehaviourStatus IsTradeOpenEvent(BotContext c)
         {
             if (Trade.IsTrading)
             {
-                Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, "I have opened trade with you, if you don't see it please rezone."));
-                return BehaviourStatus.Succeeded;
+                if (Trade.CurrentTarget == c.TradeOrderTarget)
+                {
+                    Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, "I have opened trade with you, if you don't see it please rezone."));
+                    return BehaviourStatus.Succeeded;
+                }
+                else
+                    return BehaviourStatus.Failed;
             }
 
             var tradeOpened = EventTrigger.Status("TradeOpened");
@@ -78,12 +89,18 @@ namespace MalisImpDispenser
             return BehaviourStatus.Running;
         }
 
-        private static BehaviourStatus TradeCompleted(BotContext c)
+        private static BehaviourStatus TradeCompletedEvent(BotContext c)
         {
-            if (!OrderProcessor.Orders.TryGetValue(c.TradeOrderTarget.Instance, out Order order))
+            if (!OrderProcessor.Orders.TryGetValue(c.TradeOrderTarget.Instance, out _))
                 return BehaviourStatus.Failed;
 
-            return EventTrigger.Status("TradeCompleted");
+            if (EventTrigger.Status("TradeDecline") == BehaviourStatus.Succeeded)
+                return BehaviourStatus.Failed;
+
+            if (EventTrigger.Status("TradeCompleted") == BehaviourStatus.Succeeded)
+                return BehaviourStatus.Succeeded;
+
+            return BehaviourStatus.Running;
         }
 
         private static BehaviourStatus AnyTradeTarget(BotContext c)
@@ -150,7 +167,7 @@ namespace MalisImpDispenser
                 return BehaviourStatus.Failed;
 
             Logger.Information($"Adding to trade: {bag.UniqueIdentity} {bag.Slot}");
-            Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, $"Inserting backpack to trade. If you don't see the backpack, rezone."));
+            Client.SendPrivateMessage(c.TradeOrderTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, $"Inserting backpack to trade. If you don't see the backpack please rezone."));
 
             Trade.AddItem(bag.Slot);
 
@@ -159,7 +176,7 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus ConfirmTrade(BotContext c)
         {
-            if (!Trade.IsTrading || !OrderProcessor.Orders.TryGetValue(Trade.CurrentTarget.Instance, out Order order))
+            if (Trade.IsTrading && c.TradeOrderTarget != Trade.CurrentTarget || !Trade.IsTrading || !OrderProcessor.Orders.TryGetValue(Trade.CurrentTarget.Instance, out Order order))
                 return BehaviourStatus.Failed;
 
             bool itemCheck = Trade.TargetWindowCache.Items.Count == 1 && 
@@ -197,10 +214,14 @@ namespace MalisImpDispenser
 
         private static BehaviourStatus TradeAccept(BotContext c)
         {
+            if (!Trade.IsTrading)
+                return BehaviourStatus.Failed;
+
             if (!OrderProcessor.Orders.ContainsKey(c.TradeOrderTarget.Instance))
                 return BehaviourStatus.Failed;
 
             Trade.Accept();
+
             return BehaviourStatus.Succeeded;
         }
 

@@ -14,6 +14,8 @@ namespace MalisImpDispenser
 {
     internal static class BuyingBehavior
     {
+        private static AutoResetInterval _internalReset = new AutoResetInterval(5000);
+
         internal static IBehaviour<BotContext> Process()
         {
             return FluentBuilder.Create<BotContext>()
@@ -21,11 +23,16 @@ namespace MalisImpDispenser
                     .Sequence($"Buying Sequence")
                         .Subtree(TryToOpenShop())
                         .Do("Buy Item", BuyItem)
-                        .Do("Item Bought Event", c => EventTrigger.Status("TradeCompleted"))
+                        .Do("Item Bought Event", TradeCompletedEvent)
                         .Do("Check Shop List", CheckShopList)
                     .End()
                 .End()
                 .Build();
+        }
+
+        private static BehaviourStatus TradeCompletedEvent(BotContext context)
+        {
+            return EventTrigger.Status("TradeCompleted");
         }
 
         internal static IBehaviour<BotContext> TryToOpenShop()
@@ -40,14 +47,20 @@ namespace MalisImpDispenser
                 .Build();
         }
 
-        private static BehaviourStatus ShopOpenedEvent(BotContext c) => !Trade.IsTrading ? BehaviourStatus.Running : Trade.CurrentTarget == IdentityType.VendingMachine ? BehaviourStatus.Succeeded : BehaviourStatus.Failed;
+        private static BehaviourStatus ShopOpenedEvent(BotContext c)
+        {
+            if (Trade.IsTrading)
+                return Trade.CurrentTarget == IdentityType.VendingMachine ? BehaviourStatus.Succeeded : BehaviourStatus.Failed;
+
+            return _internalReset.Elapsed ? BehaviourStatus.Failed : BehaviourStatus.Running;
+        }
 
         private static BehaviourStatus CheckShopList(BotContext c)
         {
             var isShopListEmpty = OrderProcessor.CurrentOrder.ShopListEmpty? BehaviourStatus.Succeeded: BehaviourStatus.Failed;
 
             if (isShopListEmpty == BehaviourStatus.Succeeded)
-                DynamicEvent._dynamicEvents.Clear();
+                DynamicEvent.Reset();
 
             return isShopListEmpty;
         }
@@ -56,9 +69,13 @@ namespace MalisImpDispenser
         {
             CoreItem baseItem = OrderProcessor.CurrentOrder.GetNextShopItem();
 
+            DynamicEvent.Reset();
+            _internalReset.Reset();
+
             if (Trade.IsTrading)
             {
                 Trade.Decline();
+                Client.SendPrivateMessage(Trade.CurrentTarget.Instance, ScriptTemplate.RespondMsg(Color.Orange, $"Please don't engage trades with me. I am currently finishing a order. If your order is complete, please wait patiently."));
                 return BehaviourStatus.Running;
             }
 
