@@ -25,6 +25,7 @@ namespace MalisImpDispenser
             { CommandType.Designer,  cmd => DesignerCommand.Process((DesignerCmd)cmd)},
             { CommandType.Help,  cmd => HelpCommand.Process(cmd)},
             { CommandType.Alias, cmd => AliasCommand.Process(cmd)   },
+            { CommandType.Debug, cmd => DebugCommand.Process(cmd)   },
         };
 
         public static void Invoke(CommandType type, CommandBase cmdBase) => _commands[type].Invoke(cmdBase);
@@ -161,8 +162,8 @@ namespace MalisImpDispenser
         Status,
         Designer,
         Help,
-        Test,
-        Alias
+        Alias,
+        Debug
     }
 
     public enum DesignAct

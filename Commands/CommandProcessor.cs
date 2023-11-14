@@ -23,9 +23,9 @@ namespace MalisImpDispenser
             { CommandType.Status, (msg,id) => StatusAction(msg,id) },
             { CommandType.Designer, (msg,id) => DesignAction(msg,id) },
             { CommandType.Ladder, (msg,id) => LadderAction(msg,id) },
-            { CommandType.Test, (msg,id) => TestAction(msg,id)   },
             { CommandType.Help, (msg,id) => CommandBaseAction(msg,id)   },
             { CommandType.Alias, (msg,id) => CommandBaseAction(msg,id)   },
+            { CommandType.Debug, (msg,id) => CommandBaseAction(msg,id)   },
         };
 
         public static bool TryProcess(PrivateMessage privMsg, out CommandType command, out CommandBase commandBase)
@@ -214,11 +214,6 @@ namespace MalisImpDispenser
         private static StatusCmd StatusAction(string[] cmdParts, int requesterId)
         {
             return new StatusCmd(requesterId);
-        }
-
-        private static CommandBase TestAction(string[] msg, int id)
-        {
-            return new CommandBase(id);
         }
     }
 }
