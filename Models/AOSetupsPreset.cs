@@ -160,7 +160,7 @@ namespace MalisImpDispenser
 
                 foreach (AOSImplantData implant in setupsPage.implants)
                 {
-                    if (implant.type == "symbiant" || implant.clusters == null || implant.ql < 50 || implant.ql > 200)
+                    if (implant.type == "symbiant" || implant.clusters == null || implant.ql < 10 || implant.ql > 200)
                         continue;
 
                     implantData.Add(implant);

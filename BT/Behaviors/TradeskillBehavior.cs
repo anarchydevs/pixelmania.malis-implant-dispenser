@@ -40,7 +40,6 @@ namespace MalisImpDispenser
                                 .Do("Item Deleted Event", ItemTradeskillEvent)
                             .End()
                             .Sequence("TradeSkill Sequence 3")
-                                .Condition("Clean Implant Condition 2", CleanImplantCondition2)
                                 .Do("Clean Implant", CleanImplant)
                                 .Do("Item Deleted Event", ItemDeleteEvent)
                             .End()
@@ -61,7 +60,7 @@ namespace MalisImpDispenser
             var itemDelete = EventTrigger.Status("ItemDeleted");
 
             if (itemDelete == BehaviourStatus.Succeeded)
-                c.CurrentTradeskillClusters.LastOrDefault().Tradeskilled = true;
+                c.OrderClusters.Where(x => !x.Tradeskilled).LastOrDefault().Tradeskilled = true;
 
             return itemDelete;
         }
@@ -143,20 +142,14 @@ namespace MalisImpDispenser
 
         private static bool CleanImplantCondition1(BotContext c)
         {
-            return !Utils.LastInventoryItem().Name.Contains("Basic") &&  //NEW NODE
-                c.CurrentTradeskillClusters.Where(x => x.IsTrickle).All(x => x.Tradeskilled) &&
-                c.CurrentTradeskillClusters.Where(x => !x.IsTrickle).All(x => !x.Tradeskilled);
+            return !Utils.LastInventoryItem().Name.Contains("Basic") &&
+                c.OrderClusters.Where(x => x.IsTrickle).All(x => x.Tradeskilled) &&
+                c.OrderClusters.Where(x => !x.IsTrickle).All(x => !x.Tradeskilled);
         }
 
         private static bool TradeSkillCondition2(BotContext c)
         {
-            return Utils.LastInventoryItem().Name.Contains("Basic") ||
-                 c.CurrentTradeskillClusters.Where(x => x.IsTrickle).All(x => x.Tradeskilled); ;
-        }
-
-        private static bool CleanImplantCondition2(BotContext c)
-        {
-            return true;
+            return Utils.LastInventoryItem().Name.Contains("Basic") || c.OrderClusters.Where(x => x.IsTrickle).All(x => x.Tradeskilled);
         }
 
         private static BehaviourStatus GetNextClusters(BotContext c)
@@ -166,16 +159,16 @@ namespace MalisImpDispenser
             Logger.Information("Resetting events");
 
             var currentOrder = OrderProcessor.CurrentOrder;
-            var currentTsClusters = currentOrder.GetClusters().Where(x => !x.Tradeskilled);
+            var clusters = currentOrder.GetClusters();
 
-            if (currentTsClusters.Count() == 0)
+            if (clusters.Where(x => !x.Tradeskilled).Count() == 0)
             {
                 Logger.Information("Out of clusters, moving implant to backpack");
                 Client.SendPrivateMessage(currentOrder.Requester, ScriptTemplate.OrderTicket(OrderProcessor.Orders[currentOrder.Requester], $"Order Update"), false);
                 return BehaviourStatus.Failed;
             }
 
-            c.CurrentTradeskillClusters = currentTsClusters;
+            c.OrderClusters = clusters;
 
             return BehaviourStatus.Succeeded;
         }

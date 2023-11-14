@@ -16,7 +16,7 @@ namespace MalisImpDispenser
     {
         public Identity TradeOrderTarget = Identity.None;
         public Identity TradeDebtTarget = Identity.None;
-        public IEnumerable<ClusterItem> CurrentTradeskillClusters = new List<ClusterItem>();
+        public IEnumerable<ClusterItem> OrderClusters = new List<ClusterItem>();
         public ActiveItem ActiveItem;
         public int TrickleClusters;
     }

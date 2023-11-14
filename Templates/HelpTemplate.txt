@@ -33,12 +33,13 @@ Will skip any clusters / implants that the bot can't craft.</font>
 
 <font color=#{{ color.orange }}>Syntax:</font>
 	- designer show
+	- designer aosetups 'link'
 	- designer create 'implantslot'
 	- designer modify 'index' 'ql'
 	- designer modify 'index' 'cluster'
 
 <font color=#{{ color.darkblue}}>The implant designer is made for making implant presets via gui interface.
-Only the first command needs to be executed, the others will be automated through the UI.</font>
+Create / modify commands can be executed through the UI.</font>
 
 <img src=tdb://id:GFX_GUI_FRIENDLIST_SPLITTER>
 

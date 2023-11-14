@@ -104,6 +104,12 @@ namespace MalisImpDispenser
                 return;
             }
 
+            if (preset.GetImplant().Ql < 50 && preset.GetImplant().Ql % 10 != 0)
+            {
+                Client.SendPrivateMessage(preset.Requester, ScriptTemplate.RespondMsg(Color.Red, $"Skipping '{preset.GetImplant().Slot}' due to being unable to trickle implants below ql 50."));
+                return;
+            }
+
             if (!BagOwners.HasAvailableBags)
             {
                 Client.SendPrivateMessage(preset.Requester, ScriptTemplate.RespondMsg(Color.Red, "Queue is full. Please try again later."));

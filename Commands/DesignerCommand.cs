@@ -42,9 +42,13 @@ namespace MalisImpDispenser
             {
                 sendFeedback = DesignRemoveRequest(removeCmd);
             }
-           else if (cmd is DesignerOrderCmd orderCmd)
+            else if (cmd is DesignerOrderCmd orderCmd)
             {
                 sendFeedback = DesignOrderRequest(orderCmd);
+            }
+            else if (cmd is DesignerAOSetupsCmd aosetupsCmd)
+            {
+                sendFeedback = DesignAOSetupsRequest(aosetupsCmd);
             }
             else
             {
@@ -57,6 +61,48 @@ namespace MalisImpDispenser
 
             if (sendFeedback && ImplantDesigner.Previews[cmd.RequesterId] != null)
                 Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.OrderTicket(ImplantDesigner.Previews[cmd.RequesterId], "Designer Preview", true));
+        }
+
+        private static bool DesignAOSetupsRequest(DesignerAOSetupsCmd cmd)
+        {
+            if (!AOSetupsPreset.CanProcess)
+            {
+                Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Red, "I was busy processing another AOSetup. Ask me again."));
+                return false;
+            }
+
+            DesignShowRequest(cmd, out Order preview);
+
+            AOSetupsPreset.CanProcess = false;
+
+            AOSetupsPreset.GetImplants(cmd.Url).ContinueWith(implants =>
+            {
+                if (implants.Result == null)
+                {
+                    AOSetupsPreset.CanProcess = true;
+                    Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Red, "Invalid url or I can't access the site right now."));
+                    return;
+                }
+
+                Logger.Information($"AOSetups order taken");
+
+                var firstAvailableIndex = 0;
+
+                if (preview.ImplantPresets.Count() > 0)
+                    firstAvailableIndex = Enumerable.Range(0, preview.ImplantPresets.Count() + 1).Except(preview.ImplantPresets.Select(x => x.Index)).FirstOrDefault();
+
+                foreach (var implant in implants.Result)
+                {
+                    var preset = ImplantDesigner.MakePreset(cmd.RequesterId, implant.ql, implant.GetSlot(), implant.clusters.Select(x => new ClusterItem { Type = x.Key, Stat = implant.GetCluster(x.Value.ClusterID) }).ToList());
+                    preview.ImplantPresets.Add(preset);
+                    preset.Index = firstAvailableIndex;
+                    firstAvailableIndex++;
+                }
+
+                Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.OrderTicket(ImplantDesigner.Previews[cmd.RequesterId], "Designer Preview", true));
+            });
+
+            return false;
         }
 
         private static bool DesignOrderRequest(DesignerOrderCmd cmd)

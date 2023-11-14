@@ -71,5 +71,21 @@ namespace MalisImpDispenser
             else
                 return value;
         }
+
+        internal static string ExtractAosetupsUrlId(string fullUrl)
+        {
+            string id;
+
+            int lastSlashIndex = fullUrl.LastIndexOf('/');
+
+            if (lastSlashIndex >= 0 && lastSlashIndex < fullUrl.Length - 1)
+            {
+                id = fullUrl.Substring(lastSlashIndex + 1);
+                return id;
+            }
+
+            id = fullUrl;
+            return id;
+        }
     }
 }

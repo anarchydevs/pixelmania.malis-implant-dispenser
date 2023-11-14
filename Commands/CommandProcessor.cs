@@ -87,15 +87,8 @@ namespace MalisImpDispenser
                 return null;
             }
 
-            int lastSlashIndex = cmdParts[0].LastIndexOf('/');
+            aoSetupsCmd.Url = Utils.ExtractAosetupsUrlId(cmdParts[0]);
 
-            if (lastSlashIndex >= 0 && lastSlashIndex < cmdParts[0].Length - 1)
-            {
-                aoSetupsCmd.Url = cmdParts[0].Substring(lastSlashIndex + 1);
-                return aoSetupsCmd;
-            }
-
-            aoSetupsCmd.Url = cmdParts[0];
             return aoSetupsCmd;
         }
 
@@ -206,11 +199,13 @@ namespace MalisImpDispenser
                         else
                             return new DesignerModifyClusterCmd(index, cmdParts[2], requesterId, action);
                     }
-                    break;  
+                    break;
                 case DesignAct.Remove:
                     if (!int.TryParse(cmdParts[1], out index))
                         return null;
                     return new DesignerRemoveCmd(index, requesterId, action);
+                case DesignAct.Aosetups:
+                    return new DesignerAOSetupsCmd(requesterId, action, cmdParts[1]);
             }
             return null;
         }

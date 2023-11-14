@@ -83,6 +83,16 @@ namespace MalisImpDispenser
         }
     }
 
+    public class DesignerAOSetupsCmd : DesignerCmd
+    {
+        public string Url;
+
+        public DesignerAOSetupsCmd(int requesterId, DesignAct action, string url) : base(0, action, requesterId)
+        {
+            Url = Utils.ExtractAosetupsUrlId(url);
+        }
+    }
+
     public class DesignerOrderCmd : DesignerCmd
     {
         public DesignerOrderCmd(int requesterId, DesignAct action) : base(0, action, requesterId) { }
@@ -162,6 +172,7 @@ namespace MalisImpDispenser
         Remove,
         Modify,
         Show,
-        Order
+        Order,
+        Aosetups
     }
 }
