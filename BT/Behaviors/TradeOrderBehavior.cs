@@ -130,7 +130,6 @@ namespace MalisImpDispenser
                 if (dynel.DistanceFrom(DynelManager.LocalPlayer) > 2f)
                     continue;
 
-                Logger.Information($"Trade target '{requester}' acquired, timing out in 30 seconds");
                 c.TradeOrderTarget = dynel.Identity;
 
                 break;

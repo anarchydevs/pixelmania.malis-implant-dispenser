@@ -24,6 +24,8 @@ namespace MalisImpDispenser
             inventory += $"Total: {Inventory.Items.Where(x => x.Slot.Type == IdentityType.Inventory).Count()}";
 
             Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, inventory));
+
+            DynelManager.LocalPlayer.MovementComponent.ChangeMovement(MovementAction.LeaveSit);
         }
     }
 }   
