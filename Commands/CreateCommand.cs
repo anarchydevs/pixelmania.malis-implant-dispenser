@@ -48,6 +48,8 @@ namespace MalisImpDispenser
 
             OrderProcessor.SetOrder(ImplantDesigner.MakePreset(cmd.RequesterId, cmd.Ql, impSlot, clusters));
 
+            Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, "Order accepted and added to queue. I will update you as I progress your order"));
+
             if (OrderProcessor.Orders.ContainsKey(cmd.RequesterId))
                 Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.OrderTicket(OrderProcessor.Orders[cmd.RequesterId]), false);
         }
@@ -75,6 +77,7 @@ namespace MalisImpDispenser
             ImplantPreset preset = ImplantDesigner.MakePreset(cmd.RequesterId, ql, impSlot, clusters);
 
             OrderProcessor.SetOrder(preset);
+            Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, "Order accepted and added to queue. I will update you as I progress your order"));
             Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.OrderTicket(OrderProcessor.Orders[cmd.RequesterId]));
         }
     }

@@ -1,4 +1,6 @@
 ﻿using AOSharp.Clientless;
+using AOSharp.Clientless.Logging;
+using AOSharp.Clientless.Net;
 using AOSharp.Common.GameData;
 using Newtonsoft.Json;
 using SmokeLounge.AOtomation.Messaging.GameData;
@@ -16,15 +18,15 @@ namespace MalisImpDispenser
     {
         internal static void Process(CommandBase cmd)
         {
-            string inventory = "";
+            string debugMsg = "";
 
             foreach (var item in Inventory.Items.Where(x => x.Slot.Type == IdentityType.Inventory))
-                inventory += $"'{item.Name}' '{item.Slot}'" + Environment.NewLine;
+                debugMsg += $"'{item.Name}' '{item.Slot}'" + Environment.NewLine;
 
-            inventory += $"Total: {Inventory.Items.Where(x => x.Slot.Type == IdentityType.Inventory).Count()}";
+            debugMsg += $"Total: {Inventory.Items.Where(x => x.Slot.Type == IdentityType.Inventory).Count()}" + Environment.NewLine;
+            debugMsg += $"Tcp client game server connection: {Client.Connected}";
 
-            Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, inventory));
-
+            Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, debugMsg));
             DynelManager.LocalPlayer.MovementComponent.ChangeMovement(MovementAction.LeaveSit);
         }
     }

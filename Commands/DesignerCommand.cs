@@ -131,6 +131,8 @@ namespace MalisImpDispenser
                               preset.GetClusters().Where(x => !x.IsTrickle).ToList()));
                     }
 
+                    Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, "Order accepted and added to queue. I will update you as I progress your order"));
+
                     ImplantDesigner.Previews.Remove(cmd.RequesterId);
                 }
             }

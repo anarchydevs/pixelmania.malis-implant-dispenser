@@ -33,7 +33,8 @@ namespace MalisImpDispenser
                     Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Red, "Invalid url or I can't access the site right now."));
                     return;
                 }
-                Logger.Information($"AOSetups order taken");
+
+                Client.SendPrivateMessage(cmd.RequesterId, ScriptTemplate.RespondMsg(Color.Orange, "Order accepted and added to queue. I will update you as I progress your order"));
                 OrderProcessor.SetOrder(cmd.RequesterId, implants.Result);
 
                 if (OrderProcessor.Orders.ContainsKey(cmd.RequesterId))

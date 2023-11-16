@@ -55,6 +55,7 @@ namespace MalisImpDispenser
                 Client.SendPrivateMessage(_requesterId, ScriptTemplate.RespondMsg(Color.Orange, $" Short guidelines:\n" +
                     $" - Approach me closely and I will engage a trade when I am ready. \n - If I am processing another order (you will notice me moving my hands), please wait patiently\n" +
                     $" - If I am not engaging a trade with you AND idling around (not moving my hands), please report the issue to the host.\n" +
+                    $" - You can keep adding more orders to this ticket, however I will only engage a trade when I fully complete your updated order\n" +
                     $" - Your timer will only tick down if I am not processing any other orders.\n\n"));
 
             }

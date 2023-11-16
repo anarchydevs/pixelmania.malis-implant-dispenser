@@ -38,11 +38,11 @@
   <ItemGroup>
     <Reference Include="AOSharp.Clientless, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\aosharp.clientless\AOSharp.Clientless\bin\Debug\AOSharp.Clientless.dll</HintPath>
+      <HintPath>..\aosharp.clientless\Test\bin\Debug\AOSharp.Clientless.dll</HintPath>
     </Reference>
     <Reference Include="AOSharp.Clientless.Chat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\aosharp.clientless\AOSharp.Clientless\bin\Debug\AOSharp.Clientless.Chat.dll</HintPath>
+      <HintPath>..\aosharp.clientless\Test\bin\Debug\AOSharp.Clientless.Chat.dll</HintPath>
     </Reference>
     <Reference Include="AOSharp.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AOSharpSDK.1.0.49\lib\net48\AOSharp.Common.dll</HintPath>
